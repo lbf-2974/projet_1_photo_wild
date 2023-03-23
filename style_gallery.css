@@ -18,14 +18,18 @@
 
 /* HEADER */
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
 header {
-    height: 100vh;
-    background-image: url("images/image-nav.jpg");
+    height: 70vh;
+    background-image: url(/images/gallery_header.jpg);
     background-size: cover;
     background-position: top;
     width: auto;
 }
-
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -37,28 +41,23 @@ header {
     width: 100vw;
     transition: all 1s ease;
     height: 5rem;
-
+    z-index: 5;
 }
-
 .nav-bar.scroll {
     background-color: var(--second-color);
 }
-
 img.logo {
     height: 7rem;
     width: 7rem;
     justify-self: flex-start;
     margin-left: 2rem;
 }
-
-
 ul li {
     list-style: none;
     padding: 1.7rem 0;
     align-items: center;
     justify-content: center;
 }
-
 ul li a {
     text-decoration: none;
     margin: 2rem;
@@ -66,12 +65,10 @@ ul li a {
     font-weight: bold;
     letter-spacing: 10px;
 }
-
 .hamburger {
     cursor: pointer;
     top: 20rem;
 }
-
 .bar {
     display: block;
     width: 35px;
@@ -80,23 +77,18 @@ ul li a {
     transition: all 0.5s ease;
     background-color: var(--first-color);
 }
-
 .hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
-
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
-
 .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
 .hamburger {
     display: block;
 }
-
 .nav-menu {
     position: fixed;
     left: 100%;
@@ -106,14 +98,12 @@ ul li a {
     flex-direction: column;
     width: 100vw;
     text-align: center;
-    background-color: rgb(146, 115, 101, 0.25);
+    background-color: rgb(146, 115, 101);
     transition: 1s;
 }
-
 .nav-menu.active {
     left: 0;
 }
-
 .home-head {
     display: flex;
     flex-direction: column;
@@ -123,33 +113,37 @@ ul li a {
     width: 98vw;
     position: absolute;
     margin: 15rem auto 0 auto;
-
 }
-
 .home-head h1 {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     padding: 1rem;
     margin: auto;
     letter-spacing: 0.2rem;
-}
-
-.home-head p {
-    font-style: italic;
-    font-size: 1rem;
-    font-weight: bold;
+    color: var(--first-color);
+    background-color: rgba(239, 208, 158,0.2);
 }
 
 .home-head.scroll {
     display: none;
 }
-
 .home-head.active {
     display: none;
 }
 
 
-/* GALLERY */
+/* MAIN */
+
+h2 {
+    height: 2rem;
+    padding: 1.5rem;
+    width: 89%;
+    margin: 1rem auto;
+    color: var(--second-color);
+    font-size: 2rem;
+}
+
+/* SLIDER */
 
 .slides img {
     width: 100%;
@@ -162,7 +156,6 @@ body {
 .slider {
     margin: auto;
     position: relative;
-
 }
 
 .slides {
@@ -180,6 +173,7 @@ body {
     border-radius: 0 0.188rem 0.188rem 0;
     background: rgba(0, 0, 0, .5);
     transition: all 0.3s;
+    z-index: 4;
 }
 
 .next {
@@ -192,6 +186,37 @@ body {
     background: rgba(0, 0, 0, .8)
 }
 
+
+/* GRID*/
+
+.container-pictures {
+    background-color: var(--first-color);
+    padding: 0 0 2rem 0;
+
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto;
+    padding: 10px 20px;
+    background-color: var(--first-color);
+    width: 90vw;
+    
+  }
+   .column {
+     flex: 100%;
+     max-width: 100%;
+     padding: 0 4px;
+     
+    }
+ 
+  .column img {
+    margin-top: 1rem;
+    vertical-align: middle;
+    width: 100%;
+}
+  
 
 /* FOOTER */
 
@@ -206,28 +231,21 @@ footer {
     margin-left: 1rem;
     background-color: var(--second-color);
     color: var(--first-color);
-    font-size: large;
-    font-style: italic;
-    transition: transform .1s;
 }
 
 .logofooter {
     height: 4rem;
     width: 4rem;
     background-color: var(--second-color);
-    transition: transform .1s;
 }
 
-.textfooter:hover {
-    transform: scale(1.2);
-}
 
 .rsimage {
     height: 2rem;
     width: 2rem;
     background-color: var(--second-color);
     margin: 0 1rem;
-    transition: transform .1s;
+    transition: transform 0.3s;
 }
 
 .rsimage:hover {
@@ -250,6 +268,10 @@ footer {
 
 
 @media screen and (min-width: 768px) {
+    
+    header {
+        height: 90vh;
+    }
 
     .nav-menu {
         position: fixed;
@@ -276,4 +298,35 @@ footer {
     .slider {
         width: 70vw;
     }
-}
+
+    .column {
+        flex: 32%;
+        max-width: 32%;
+        }
+
+     a {
+        position: relative;
+    }
+    ul li a:after {
+        content: "";
+        position: absolute;
+        background-color: var(--third-color);
+        height: 3px;
+        width: 0%;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+    ul li a:hover:after {
+        content: "";
+        position: absolute;
+        background-color: var(--third-color);
+        height: 3px;
+        width: 95%;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+
+
+  }

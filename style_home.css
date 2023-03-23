@@ -1,62 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     --first-color: #272727;
     --second-color: rgb(146,115,101);
     --third-color: #EFD09E;
     --font-family: 'Roboto', sans-serif;
-
-
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
 
 /* HEADER */
 
+
 header {
     height: 100vh;
-    background-image: url("images/image-nav.jpg");
+    background-image: url(/images/image-nav.jpg);
     background-size: cover;
     background-position: top;
-    width:auto;
+    width: auto;
 }
-
 .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #272727;
     font-family: var(--font-family);
-    position:fixed;
+    position: fixed;
     top: 0;
-    width:100vw;
+    width: 100vw;
     transition: all 1s ease;
     height: 5rem;
-
+    z-index: 5;
 }
-.nav-bar.scroll{
+.nav-bar.scroll {
     background-color: var(--second-color);
 }
-
 img.logo {
     height: 7rem;
     width: 7rem;
     justify-self: flex-start;
     margin-left: 2rem;
 }
-
-
 ul li {
     list-style: none;
     padding: 1.7rem 0;
     align-items: center;
     justify-content: center;
 }
-
 ul li a {
     text-decoration: none;
     margin: 2rem;
@@ -64,12 +58,10 @@ ul li a {
     font-weight: bold;
     letter-spacing: 10px;
 }
-
 .hamburger {
     cursor: pointer;
-    top:20rem;
+    top: 20rem;
 }
-
 .bar {
     display: block;
     width: 35px;
@@ -78,23 +70,18 @@ ul li a {
     transition: all 0.5s ease;
     background-color: var(--first-color);
 }
-
 .hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
-
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
-
 .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
 .hamburger {
     display: block;
 }
-
 .nav-menu {
     position: fixed;
     left: 100%;
@@ -104,14 +91,12 @@ ul li a {
     flex-direction: column;
     width: 100vw;
     text-align: center;
-    background-color: rgb(146,115,101,0.25);
+    background-color: rgb(146, 115, 101);
     transition: 1s;
 }
-
 .nav-menu.active {
     left: 0;
 }
-
 .home-head {
     display: flex;
     flex-direction: column;
@@ -119,29 +104,24 @@ ul li a {
     text-align: center;
     color: var(--first-color);
     width: 98vw;
-    position:absolute;
+    position: absolute;
     margin: 15rem auto 0 auto;
-
 }
 .home-head h1 {
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     padding: 1rem;
     margin: auto;
     letter-spacing: 0.2rem;
+    color: var(--first-color);
+    background-color: rgba(239, 208, 158,0.2);
 }
 
-.home-head p {
-    font-style: italic;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.home-head.scroll{
+.home-head.scroll {
     display: none;
 }
-.home-head.active{
-    display:none;
+.home-head.active {
+    display: none;
 }
 
 
@@ -207,6 +187,7 @@ ul li a {
     text-decoration: none;
     cursor: pointer;
     width: 9rem;
+    margin-top:2rem;
   }
 
   .button:hover{
@@ -229,20 +210,12 @@ footer {
     margin-left: 1rem;
     background-color: var(--second-color);
     color: var(--first-color);
-    font-size: large;
-    font-style: italic;
-    transition: transform .1s;
 }
 
 .logofooter{
     height: 4rem;
     width: 4rem;
     background-color: var(--second-color);
-    transition: transform .1s;
-}
-
-.textfooter:hover{
-    transform: scale(1.2);
 }
 
 .rsimage{
@@ -250,7 +223,7 @@ footer {
     width: 2rem;
     background-color: var(--second-color);
     margin: 0 1rem;
-    transition: transform .1s;
+    transition: transform 0.3s;
 }
 
 .rsimage:hover{
@@ -317,5 +290,34 @@ footer {
         width: 50%;
     }
 
+    .button:hover {
+        background-color: var(--third-color);
+        border: 0.1rem solid var(--second-color);
+        cursor: pointer;
+    }
+
+    a {
+        position: relative;
+    }
+    ul li a:after {
+        content: "";
+        position: absolute;
+        background-color: var(--third-color);
+        height: 3px;
+        width: 0%;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+    ul li a:hover:after {
+        content: "";
+        position: absolute;
+        background-color: var(--third-color);
+        height: 3px;
+        width: 95%;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
 
   }

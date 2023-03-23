@@ -21,7 +21,7 @@
 
 
 header {
-    height: 100vh;
+    height: 70vh;
     background-image: url(/images/contact.png);
     background-size: cover;
     background-position: top;
@@ -40,29 +40,23 @@ header {
     width: 100vw;
     transition: all 1s ease;
     height: 5rem;
+    z-index: 5;
 }
-
 .nav-bar.scroll {
     background-color: var(--second-color);
-
 }
-
 img.logo {
     height: 7rem;
     width: 7rem;
     justify-self: flex-start;
     margin-left: 2rem;
 }
-
-
 ul li {
     list-style: none;
     padding: 1.7rem 0;
     align-items: center;
     justify-content: center;
 }
-
-
 ul li a {
     text-decoration: none;
     margin: 2rem;
@@ -70,14 +64,10 @@ ul li a {
     font-weight: bold;
     letter-spacing: 10px;
 }
-
-
-
 .hamburger {
     cursor: pointer;
     top: 20rem;
 }
-
 .bar {
     display: block;
     width: 35px;
@@ -86,23 +76,18 @@ ul li a {
     transition: all 0.5s ease;
     background-color: var(--first-color);
 }
-
 .hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
-
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
-
 .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-
 .hamburger {
     display: block;
 }
-
 .nav-menu {
     position: fixed;
     left: 100%;
@@ -112,14 +97,12 @@ ul li a {
     flex-direction: column;
     width: 100vw;
     text-align: center;
-    background-color: rgb(146, 115, 101, 0.25);
+    background-color: rgb(146, 115, 101);
     transition: 1s;
 }
-
 .nav-menu.active {
     left: 0;
 }
-
 .home-head {
     display: flex;
     flex-direction: column;
@@ -129,27 +112,20 @@ ul li a {
     width: 98vw;
     position: absolute;
     margin: 15rem auto 0 auto;
-
 }
-
 .home-head h1 {
     font-weight: bold;
     font-size: 3.5rem;
     padding: 1rem;
     margin: auto;
     letter-spacing: 0.2rem;
-}
-
-.home-head p {
-    font-style: italic;
-    font-size: 1rem;
-    font-weight: bold;
+    color: var(--first-color);
+    background-color: rgba(239, 208, 158,0.2);
 }
 
 .home-head.scroll {
     display: none;
 }
-
 .home-head.active {
     display: none;
 }
@@ -200,21 +176,14 @@ ul li a {
     width: 50vw;
     margin: auto;
     padding: 2.5rem;
-    color: var(--third-color);
+    color: var(--second-color);
 
 }
 
 .contact-intro h2 {
-    font-size: 1.4rem;
+    font-size: 2rem;
 }
 
-.contact-intro p {
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-    padding-top: 1.5rem;
-    line-height: 2rem;
-
-}
 
 .contactForm {
     display: flex;
@@ -260,28 +229,21 @@ footer {
     margin-left: 1rem;
     background-color: var(--second-color);
     color: var(--first-color);
-    font-size: large;
-    font-style: italic;
-    transition: transform .1s;
 }
 
 .logofooter {
     height: 4rem;
     width: 4rem;
     background-color: var(--second-color);
-    transition: transform .1s;
 }
 
-.textfooter:hover {
-    transform: scale(1.2);
-}
 
 .rsimage {
     height: 2rem;
     width: 2rem;
     background-color: var(--second-color);
     margin: 0 1rem;
-    transition: transform .1s;
+    transition: transform 0.3s;
 }
 
 .rsimage:hover {
@@ -301,8 +263,12 @@ footer {
 }
 
 
-
 @media screen and (min-width: 768px) {
+
+    header {
+        height: 90vh;
+    }
+
 
     .nav-menu {
         position: fixed;
@@ -324,6 +290,37 @@ footer {
 
     .hamburger {
         display: none;
+    }
+
+
+    .button:hover {
+        background-color: var(--third-color);
+        border: 0.1rem solid var(--second-color);
+        cursor: pointer;
+    }
+
+    a {
+        position: relative;
+    }
+    ul li a:after {
+        content: "";
+        position: absolute;
+        background-color: var(--third-color);
+        height: 3px;
+        width: 0%;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+    ul li a:hover:after {
+        content: "";
+        position: absolute;
+        background-color: var(--third-color);
+        height: 3px;
+        width: 95%;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
     }
 
 

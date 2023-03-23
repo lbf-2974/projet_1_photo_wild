@@ -1,3 +1,6 @@
+// Script NavBar
+
+
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const titleHome = document.querySelector('.home-head');
@@ -23,5 +26,43 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Script Gallery
 
 
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n)
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+
+    let slides = document.getElementsByClassName('slides');
+    let dots = document.getElementsByClassName('dot');
+
+
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+
+    // Cacher toutes les slides
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    // Afficher la slide demandée 
+
+    slides[slideIndex - 1].style.display = 'block';
+
+
+}
